@@ -1,0 +1,10 @@
+<div class="row">
+    <h1 class="title">Work Experience</h1><hr>
+    <ul>
+      <li *ngFor="let workExp of workExps; let i = index">
+        <h3 style="white-space: pre-line"><b>{{workExp.position}}, <a href="{{workExp.website}}">{{workExp.name}}</a>  ------  ({{workExp.duration}}) </b></h3>
+        <span>{{workExp.desc}}</span><br>
+      </li><br><br>
+    </ul>
+
+  </div>

@@ -1,0 +1,51 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar class="example-toolbar">
+    <mat-icon class="example-icon drag-container" (click)="snav.toggle()     ">drag_indicator</mat-icon>
+    <h5 class="example-app-name">PRAYAS RODE</h5>
+    <span class="example-spacer"></span>
+    <mat-icon title="facebook" class="example-icon" svgIcon="facebook" (click)="openUrl('facebook')"></mat-icon>
+    <mat-icon title="twitter" class="example-icon" svgIcon="twitter" (click)="openUrl('twitter')"></mat-icon>
+    <mat-icon title="github" class="example-icon" svgIcon="github" (click)="openUrl('github')"></mat-icon>
+    <mat-icon title="linkedin" class="example-icon" svgIcon="linkedin" (click)="openUrl('linkedin')"></mat-icon>
+    <mat-icon title="email" class="example-icon" svgIcon="email" (click)="openUrl('email')"></mat-icon>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav class="mat-drawer-side" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [opened]="true">
+
+      <mat-nav-list class="example-matnav-list">
+        <a>  <img mat-list-item routerLink="."
+          [src]="imageUrl"
+          alt="Avatar"
+          class="img-responsive"
+          style="max-height: 50px;"  ></a>
+
+          <mat-divider></mat-divider>
+        <a class="mat-list-item" mat-list-item routerLink="/education">Education</a>
+        <mat-divider></mat-divider>
+        <a class="mat-list-item" mat-list-item routerLink="/work-exp">Work Experience</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="skill-set">Skill Set</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="projects">Projects</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="openUrl('resume')">Resume</a>
+        <mat-divider></mat-divider>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <!-- <app-home></app-home> -->
+      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

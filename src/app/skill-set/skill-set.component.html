@@ -1,0 +1,9 @@
+<div class="row">
+    <h1 class="title">Skill-Set</h1><hr>
+    <ul>
+        <li *ngFor="let skillSet of skillSets; let i = index">
+          <b>{{skillSet.name}}: </b>
+          <span>{{skillSet.value}}</span><br><br>
+        </li>
+      </ul>
+  </div>

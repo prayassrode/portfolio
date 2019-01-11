@@ -1,0 +1,9 @@
+<div class="row">
+  <h1 class="title">Projects</h1><hr>
+  <ul>
+    <li *ngFor="let project of projects; let i = index">
+      <b>{{project.name}}: </b>
+      <span>{{project.desc}}</span><br><br>
+    </li>
+  </ul>
+</div>
